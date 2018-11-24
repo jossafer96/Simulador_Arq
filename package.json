@@ -1,0 +1,22 @@
+{
+  "name": "simulador_arq",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jossafer96/Simulador_Arq.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jossafer96/Simulador_Arq/issues"
+  },
+  "homepage": "https://github.com/jossafer96/Simulador_Arq#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
