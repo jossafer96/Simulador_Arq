@@ -1,8 +1,8 @@
 var memoria = [];
-var acumulador = '';
-var dirInstruccion = 0;
-var instruccion = 0;
-var valor = 0;
+var acumulador = 0;
+var dirInstruccion = 0; //indica la posición de la instrucción a ejecutar
+var instruccion = 0; //Instruccion a ejecutar
+var valor = 0; //valor que acompaña la instruccion
 
 $('document').ready(function () {
     console.log("hola");
@@ -13,6 +13,13 @@ $('document').ready(function () {
 $("#correr").click(function () {
     cargarPrograma();
     ejecutarPrograma();
+    memoria = [];
+    incializarMemoria();
+    acumulador = 0;
+    dirInstruccion = 0; //indica la posición de la instrucción a ejecutar
+    instruccion = 0; //Instruccion a ejecutar
+    valor = 0; //valor que acompaña la instruccion
+
 });
 
 //FUNCIONES
@@ -25,53 +32,59 @@ function incializarMemoria() {
 function cargarPrograma() {
     var contenido = $("#codigo").val().split('\n');
     for (i = 0; i < contenido.length; i++) {
-        memoria[i] = parseInt(contenido[i]);
+        if (contenido[i] == "") {
+            memoria[i] = 0;
+        }
+        else {
+            memoria[i] = parseInt(contenido[i]);
+        }
     }
     obtenerInstruccion();
-    console.log(instruccion);
-    console.log(valor);
-
 }
 
 function ejecutarPrograma() {
     contador = 0;
     while (instruccion != 43 && contador < 1001) {
-        console.log('INSTRUCCION ' + instruccion)
+        console.log(acumulador)
         if (instruccion == 10) {
             lee();
         }
         else if (instruccion == 11) {
-            console.log('Escribe')
+            escribirPantalla();
         }
         else if (instruccion == 20) {
-            console.log('Carga')
+            cargarAcumulador();
         }
         else if (instruccion == 21) {
-            console.log('Almacena')
+            almacenardeAcumulador();
         }
         else if (instruccion == 30) {
-            console.log('Suma')
+            sumar();
         }
         else if (instruccion == 31) {
-            console.log('Resta')
+            restar();
         }
         else if (instruccion == 32) {
-            console.log('Divide')
+            dividir();
         }
         else if (instruccion == 33) {
-            console.log('Multiplica')
+            multiplicar();
         }
         else if (instruccion == 40) {
-            console.log('Bifurca')
+            bifurcar();
         }
         else if (instruccion == 41) {
-            console.log('Bifurcaneg')
+            bifurcarNeg();
         }
         else if (instruccion == 42) {
-            console.log('Bifurcacero')
+            bifurcarCero();
         }
-        else if (instruccion == 0) {
+        else if (instruccion == 43) {
             console.log('ALTO')
+            break;
+        }
+        else {
+            alert("Ocurrió un error en la línea " + dirInstruccion);
             break;
         }
         contador++;
@@ -84,9 +97,9 @@ function ejecutarPrograma() {
 function obtenerInstruccion() {
     instruccion = parseInt(memoria[dirInstruccion].toString().substring(0, 2));
     valor = parseInt(memoria[dirInstruccion].toString().substring(2, 6));
-    console.log(instruccion + ' - ' + valor);
 }
 
+//Instruccion 10
 function lee() {
     let ingresado = prompt('Introduzca el valor');
     memoria[parseInt(valor)] = parseInt(ingresado);
@@ -94,4 +107,65 @@ function lee() {
 
 }
 
+//Instruccion 11
+function escribirPantalla() {
+    alert(memoria[valor]);
+    dirInstruccion += 1;
+}
 
+//Instruccion 20
+function cargarAcumulador() {
+    acumulador = memoria[valor];
+    dirInstruccion += 1;
+}
+
+//Instruccion 21
+function almacenardeAcumulador() {
+    memoria[valor] = acumulador;
+    dirInstruccion += 1;
+}
+
+//Instruccion 30
+function sumar() {
+    acumulador = acumulador + memoria[valor];
+    dirInstruccion += 1;
+}
+
+//Instruccion 31
+function restar() {
+    acumulador = acumulador - memoria[valor];
+    dirInstruccion += 1;
+}
+
+//Instruccion 32
+function dividir() {
+    acumulador = memoria[valor] / acumulador;
+    dirInstruccion += 1;
+}
+
+//Instruccion 33
+function multiplicar() {
+    acumulador = memoria[valor] * acumulador;
+    dirInstruccion += 1;
+}
+
+//Instruccion 40
+function bifurcar() {
+    dirInstruccion = valor;
+}
+
+//Instruccion 41
+function bifurcarNeg() {
+    if (acumulador < 0)
+        dirInstruccion = valor;
+    else
+        dirInstruccion += 1;
+}
+
+//Instruccion 42
+function bifurcarCero() {
+    if (acumulador == 0)
+        dirInstruccion = valor;
+    else
+        dirInstruccion += 1;
+}
