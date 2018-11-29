@@ -7,13 +7,166 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CatraComputer</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
-    <textarea name="" id="codigo" cols="30" rows="10" class="form-control"></textarea>
-    <br>
-    <input type="button" value="Correr" id="correr" class="form-control button btn-primary">
-    <br>
+    
+<div class="overlay">
+  <h1>CatraComputer</h1>
+ <div class="wrapper" style="margin: 0px;">
+  <div class="box sidebar" style="padding-top: 0;height: 653px;">
+    <h3>CODIGO</h3>
+    <div class="editor">
+              <div class="gutter"><span>1</span></div>
+              <textarea name="" id="codigo" ></textarea>
+
+      </div>
+      <br>
+      <input type="button" value="Correr" id="correr" class="form-control button btn-primary" style="float: left;"></input> 
+      <button onclick="limpiar()" class="form-control button btn-primary" style="float: right;">Limpiar</button>
+      
+</div>
+
+  <div class="box " style="padding-top: 0;height: 90%;">
+     <h3>REGISTROS</h3>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <th>R0</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R1</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R2</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R3</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R4</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R5</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R6</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R7</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R8</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R9</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R10</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R11</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R12</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R13</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R14</th>
+                <th>0x00000000</th>
+              </tr>
+                </table>
+  </div>
+  <div class="box " style="padding-top: 0;height: 90%;">
+     <h3>MEMORIA</h3>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <th>R0</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R1</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R2</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R3</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R4</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R5</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R6</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R7</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R8</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R9</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R10</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R11</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R12</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R13</th>
+                <th>0x00000000</th>
+              </tr>
+              <tr>
+                <th>R14</th>
+                <th>0x00000000</th>
+              </tr>
+                </table>
+  </div>
+  <div class="box " style="width: 185%; padding-top: 0;top: -48px;position: relative;">
+     <h3>CONSOLA</h3>
+      <textarea rows="5" style="width: 100%;background: #999999;"></textarea>
+  </div>
+</div>
+  
+</div>
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
