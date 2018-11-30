@@ -13,16 +13,24 @@ $('document').ready(function () {
 $("#correr").click(function () {
     cargarPrograma();
     ejecutarPrograma();
+    iniciarVariables();
+});
+
+$("#limpiar").click(function () {
+    $("#codigo").val("");
+    iniciarVariables();
+});
+
+//FUNCIONES
+function iniciarVariables() {
     memoria = [];
     incializarMemoria();
     acumulador = 0;
     dirInstruccion = 0; //indica la posición de la instrucción a ejecutar
     instruccion = 0; //Instruccion a ejecutar
     valor = 0; //valor que acompaña la instruccion
+}
 
-});
-
-//FUNCIONES
 function incializarMemoria() {
     for (i = 0; i < 1000; i++) {
         memoria.push(0);
@@ -109,7 +117,7 @@ function lee() {
 
 //Instruccion 11
 function escribirPantalla() {
-    alert(memoria[valor]);
+    $('#consola').text($('#consola').text() + memoria[valor] + '\n');
     dirInstruccion += 1;
 }
 
