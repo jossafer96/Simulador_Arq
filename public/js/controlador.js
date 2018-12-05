@@ -34,7 +34,7 @@ function iniciarVariables() {
 }
 
 function incializarMemoria() {
-    for (i = 0; i < 1000; i++) {
+    for (i = 0; i < 100; i++) {
         memoria.push(0);
     }
 }
@@ -47,6 +47,7 @@ function cargarPrograma() {
         }
         else {
             memoria[i] = parseInt(contenido[i]);
+            $(' <tr><th> R '+i+'</th><th>'+contenido[i]+'</th></tr>').appendTo($('#memoria'));
         }
     }
     obtenerInstruccion();
@@ -55,12 +56,9 @@ function cargarPrograma() {
 function ejecutarPrograma() {
     contador = 0;
     while (instruccion != 43 && contador < 1001) {
-        console.log(acumulador)
+        
         if (instruccion == 10) {
-              
             lee();
-                            
-            
         }
         else if (instruccion == 11) {
             escribirPantalla();
@@ -104,8 +102,8 @@ function ejecutarPrograma() {
         contador++;
         obtenerInstruccion();
     }
-    console.log(memoria);
-    $('#consola').text('Programa Finalizado');
+    
+    $('#consola').text($('#consola').val()+'Programa Finalizado');
 }
 
 
@@ -115,14 +113,16 @@ function ejecutarPrograma() {
 
         
 function obtenerInstruccion() {
+
     instruccion = parseInt(memoria[dirInstruccion].toString().substring(0, 2));
     valor = parseInt(memoria[dirInstruccion].toString().substring(2, 6));
+     
     
 }
 
 //Instruccion 10
 function lee() {
-     $('#consola').val('ingrese dato');
+     //$('#consola').val('ingrese dato');
     let ingresado = prompt('Introduzca el valor');
 
     memoria[parseInt(valor)] = parseInt(ingresado);
@@ -132,7 +132,7 @@ function lee() {
 
 //Instruccion 11
 function escribirPantalla() {
-    $('#consola').text($('#consola').text() + memoria[valor] + '\n');
+    $('#consola').text($('#consola').val()+memoria[valor] + '\n');
     dirInstruccion += 1;
 }
 
@@ -140,6 +140,7 @@ function escribirPantalla() {
 function cargarAcumulador() {
     
     acumulador = memoria[valor];
+   // $(acumulador).appendTo($('#acumulador'));
     dirInstruccion += 1;
 
 }
@@ -196,4 +197,3 @@ function bifurcarCero() {
 }
 
 
-        

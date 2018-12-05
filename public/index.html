@@ -30,141 +30,29 @@
 
       </div>
 
-      <div class="box " style="padding-top: 0;height: 90%;">
+      <div class="box " style="padding-top: 0;height: 90%;" id="registros">
         <h3>REGISTROS</h3>
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
           <tr>
-            <th>R0</th>
-            <th>0x00000000</th>
+            <th>ACUMULADOR</th>
+            <th id="acumulador"></th>
           </tr>
           <tr>
-            <th>R1</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R2</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R3</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R4</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R5</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R6</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R7</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R8</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R9</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R10</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R11</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R12</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R13</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R14</th>
-            <th>0x00000000</th>
+            <th>DIRECCION</th>
+            <th id="instruccion"></th>
           </tr>
         </table>
       </div>
-      <div class="box " style="padding-top: 0;height: 90%;">
+      <div class="box " style="padding-top: 0;height: 90%;" >
         <h3>MEMORIA</h3>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <th>R0</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R1</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R2</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R3</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R4</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R5</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R6</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R7</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R8</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R9</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R10</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R11</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R12</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R13</th>
-            <th>0x00000000</th>
-          </tr>
-          <tr>
-            <th>R14</th>
-            <th>0x00000000</th>
-          </tr>
-        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="memoria">
+         </table>
       </div>
       <div class="box " style="width: 185%; padding-top: 0;top: -48px;position: relative;">
         <h3>CONSOLA</h3>
       
         <textarea name="" cols="8" id="consola" class="left"></textarea>
-        <input type="button" onclick="continueWithIt();" value="continue" />
+        <input type="button" onclick="caller();" value="continue" />
       </div>
     </div>
 
