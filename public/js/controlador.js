@@ -3,6 +3,8 @@ var acumulador = 0;
 var dirInstruccion = 0; //indica la posición de la instrucción a ejecutar
 var instruccion = 0; //Instruccion a ejecutar
 var valor = 0; //valor que acompaña la instruccion
+var flag = true;
+
 
 $('document').ready(function () {
     console.log("hola");
@@ -55,12 +57,16 @@ function ejecutarPrograma() {
     while (instruccion != 43 && contador < 1001) {
         console.log(acumulador)
         if (instruccion == 10) {
+              
             lee();
+                            
+            
         }
         else if (instruccion == 11) {
             escribirPantalla();
         }
         else if (instruccion == 20) {
+            
             cargarAcumulador();
         }
         else if (instruccion == 21) {
@@ -99,17 +105,26 @@ function ejecutarPrograma() {
         obtenerInstruccion();
     }
     console.log(memoria);
-    alert('Programa Finalizado');
+    $('#consola').text('Programa Finalizado');
 }
 
+
+
+
+
+
+        
 function obtenerInstruccion() {
     instruccion = parseInt(memoria[dirInstruccion].toString().substring(0, 2));
     valor = parseInt(memoria[dirInstruccion].toString().substring(2, 6));
+    
 }
 
 //Instruccion 10
 function lee() {
+     $('#consola').val('ingrese dato');
     let ingresado = prompt('Introduzca el valor');
+
     memoria[parseInt(valor)] = parseInt(ingresado);
     dirInstruccion += 1;
 
@@ -123,8 +138,10 @@ function escribirPantalla() {
 
 //Instruccion 20
 function cargarAcumulador() {
+    
     acumulador = memoria[valor];
     dirInstruccion += 1;
+
 }
 
 //Instruccion 21
@@ -177,3 +194,6 @@ function bifurcarCero() {
     else
         dirInstruccion += 1;
 }
+
+
+        

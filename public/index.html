@@ -18,15 +18,15 @@
   <div class="overlay">
     <h1>CatraComputer</h1>
     <div class="wrapper" style="margin: 0px;">
-      <div class="box sidebar" style="padding-top: 0;height: 653px;">
+      <div class="box sidebar" style="padding-top: 0;height: 590px;">
         <h3>CODIGO</h3>
         <div class="editor">
           <textarea name="" cols="8" id="codigo" class=""></textarea>
 
         </div>
         <br>
-        <input type="button" value="Correr" id="correr" class="form-control button btn-primary" style="float: left;"></input>
-        <button id="limpiar" class="form-control button btn-primary" style="float: right;">Limpiar</button>
+        <input type="button" value="Correr" id="correr" class="form-control button btn-primary" style="float: left;width: 80px;"></input>
+        <button id="limpiar" class="form-control button btn-primary" style="float: right;width: 80px;">Limpiar</button>
 
       </div>
 
@@ -162,7 +162,9 @@
       </div>
       <div class="box " style="width: 185%; padding-top: 0;top: -48px;position: relative;">
         <h3>CONSOLA</h3>
-        <p style="width: 100%;background: #999999;" id="consola"></p>
+      
+        <textarea name="" cols="8" id="consola" class="left"></textarea>
+        <input type="button" onclick="continueWithIt();" value="continue" />
       </div>
     </div>
 
