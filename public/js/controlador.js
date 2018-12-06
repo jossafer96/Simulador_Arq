@@ -7,7 +7,7 @@ var flag = true;
 
 
 $('document').ready(function () {
-    console.log("hola");
+    
     incializarMemoria();
 
 });
@@ -47,11 +47,14 @@ function cargarPrograma() {
         }
         else {
             memoria[i] = parseInt(contenido[i]);
-            $(' <tr><th> R '+i+'</th><th>'+contenido[i]+'</th></tr>').appendTo($('#memoria'));
+            $('#memoria').val( $('#memoria').val()+'00'+i+'-->'+contenido[i]+ '\n');
         }
     }
     obtenerInstruccion();
 }
+
+
+
 
 function ejecutarPrograma() {
     contador = 0;
@@ -59,6 +62,7 @@ function ejecutarPrograma() {
         
         if (instruccion == 10) {
             lee();
+            console.log('lee');
         }
         else if (instruccion == 11) {
             escribirPantalla();
@@ -103,7 +107,7 @@ function ejecutarPrograma() {
         obtenerInstruccion();
     }
     
-    $('#consola').text($('#consola').val()+'Programa Finalizado');
+    console.log('Programa Finalizado');
 }
 
 
@@ -116,14 +120,15 @@ function obtenerInstruccion() {
 
     instruccion = parseInt(memoria[dirInstruccion].toString().substring(0, 2));
     valor = parseInt(memoria[dirInstruccion].toString().substring(2, 6));
-     
+      $('#instruccion').val(instruccion);
     
 }
 
 //Instruccion 10
 function lee() {
-     //$('#consola').val('ingrese dato');
-    let ingresado = prompt('Introduzca el valor');
+     console.log('Introduzca el valor')
+     
+    var ingresado = Dato();
 
     memoria[parseInt(valor)] = parseInt(ingresado);
     dirInstruccion += 1;
@@ -132,13 +137,13 @@ function lee() {
 
 //Instruccion 11
 function escribirPantalla() {
-    $('#consola').text($('#consola').val()+memoria[valor] + '\n');
+    console.log(memoria[valor] + '\n');
     dirInstruccion += 1;
 }
 
 //Instruccion 20
 function cargarAcumulador() {
-    
+     $('#acumulador').val(memoria[valor]);
     acumulador = memoria[valor];
    // $(acumulador).appendTo($('#acumulador'));
     dirInstruccion += 1;
@@ -197,3 +202,27 @@ function bifurcarCero() {
 }
 
 
+(function () {
+    if (!console) {
+        console = {};
+    }
+    var old = console.log;
+    var logger = document.getElementById('log');
+    console.log = function (message) {
+        if (typeof message == 'object') {
+            logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '\n';
+        } else {
+            logger.innerHTML += message + '\n';
+        }
+    }
+})();
+
+
+
+function Dato() {
+    let nameInput = prompt("Dato");
+
+    console.log(nameInput);  
+   return nameInput;  
+};
+ 

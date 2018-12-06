@@ -21,7 +21,7 @@
       <div class="box sidebar" style="padding-top: 0;height: 590px;">
         <h3>CODIGO</h3>
         <div class="editor">
-          <textarea name="" cols="8" id="codigo" class=""></textarea>
+          <textarea name="" cols="8" id="codigo" class="" style=""></textarea>
 
         </div>
         <br>
@@ -30,29 +30,25 @@
 
       </div>
 
-      <div class="box " style="padding-top: 0;height: 90%;" id="registros">
-        <h3>REGISTROS</h3>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <th>ACUMULADOR</th>
-            <th id="acumulador"></th>
-          </tr>
-          <tr>
-            <th>DIRECCION</th>
-            <th id="instruccion"></th>
-          </tr>
-        </table>
+      <div class="box " style="padding-top: 0;height: 280px;" id="registros">
+        <h3 style="margin-bottom: 30px;">REGISTROS</h3>
+              <h4 style="float: right;">ACUMULADOR</h4>
+             <textarea name="" cols="8" id="acumulador" class="texta"></textarea>
+               <h4 style="float: right;">INSTRUCCION</h4>
+             <textarea name="" cols="8" id="instruccion" class="texta"></textarea>
+         
       </div>
-      <div class="box " style="padding-top: 0;height: 90%;" >
+      <div class="box " style="padding-top: 0;height: 280px;" >
         <h3>MEMORIA</h3>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="memoria">
+       <textarea name="" cols="8" id="memoria" class="left"></textarea>
          </table>
       </div>
-      <div class="box " style="width: 185%; padding-top: 0;top: -48px;position: relative;">
+      <div class="box " style="width: 160%; padding-top: 0;top: -48px;position: relative;">
         <h3>CONSOLA</h3>
       
-        <textarea name="" cols="8" id="consola" class="left"></textarea>
-        <input type="button" onclick="caller();" value="continue" />
+        <textarea name="" cols="8" id="log" class="left"></textarea>
+        
+</form>
       </div>
     </div>
 
