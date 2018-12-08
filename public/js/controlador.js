@@ -14,12 +14,19 @@ $('document').ready(function () {
 
 $("#correr").click(function () {
     cargarPrograma();
-    ejecutarPrograma();
+     ejecutarPrograma();
     iniciarVariables();
+    
 });
-
+$("#paso").click(function () {
+    cargarPrograma();
+    ejecutarPasoPaso();
+   
+     
+});
 $("#limpiar").click(function () {
     $("#codigo").val("");
+    location.reload(true);
     iniciarVariables();
 });
 
@@ -62,13 +69,11 @@ function ejecutarPrograma() {
         
         if (instruccion == 10) {
             lee();
-            console.log('lee');
         }
         else if (instruccion == 11) {
             escribirPantalla();
         }
         else if (instruccion == 20) {
-            
             cargarAcumulador();
         }
         else if (instruccion == 21) {
@@ -111,7 +116,55 @@ function ejecutarPrograma() {
 }
 
 
+function ejecutarPasoPaso() {
 
+        
+        if (instruccion == 10) {
+            lee();
+        }
+        else if (instruccion == 11) {
+            escribirPantalla();
+        }
+        else if (instruccion == 20) {
+            cargarAcumulador();
+        }
+        else if (instruccion == 21) {
+            almacenardeAcumulador();
+        }
+        else if (instruccion == 30) {
+            sumar();
+        }
+        else if (instruccion == 31) {
+            restar();
+        }
+        else if (instruccion == 32) {
+            dividir();
+        }
+        else if (instruccion == 33) {
+            multiplicar();
+        }
+        else if (instruccion == 40) {
+            bifurcar();
+        }
+        else if (instruccion == 41) {
+            bifurcarNeg();
+        }
+        else if (instruccion == 42) {
+            bifurcarCero();
+        } 
+        else if (instruccion == 43) {
+            console.log('Finalizado');
+            return false;
+        }
+        else {
+            alert("Ocurrió un error en la línea " + dirInstruccion);
+            return false;
+        } 
+       
+        obtenerInstruccion();
+        setTimeout(function(){ ejecutarPasoPaso(); }, 3000);
+   
+}
 
 
 
@@ -126,10 +179,8 @@ function obtenerInstruccion() {
 
 //Instruccion 10
 function lee() {
-     console.log('Introduzca el valor')
-     
-    var ingresado = Dato();
-
+    let ingresado = prompt("Dato");
+    console.log('Introduzca el valor  '+ingresado);
     memoria[parseInt(valor)] = parseInt(ingresado);
     dirInstruccion += 1;
 
@@ -137,46 +188,55 @@ function lee() {
 
 //Instruccion 11
 function escribirPantalla() {
+    console.log('----IMPRIME-----');
     console.log(memoria[valor] + '\n');
     dirInstruccion += 1;
 }
 
 //Instruccion 20
 function cargarAcumulador() {
-     $('#acumulador').val(memoria[valor]);
     acumulador = memoria[valor];
-   // $(acumulador).appendTo($('#acumulador'));
+    $('#acumulador').val(acumulador);
     dirInstruccion += 1;
 
 }
 
 //Instruccion 21
 function almacenardeAcumulador() {
+    console.log('Almecena acumulador en --> '+valor)
     memoria[valor] = acumulador;
     dirInstruccion += 1;
 }
 
 //Instruccion 30
 function sumar() {
+     console.log('Suma --> '+acumulador+'+'+memoria[valor]);
     acumulador = acumulador + memoria[valor];
+     $('#acumulador').val(acumulador);
     dirInstruccion += 1;
 }
 
 //Instruccion 31
 function restar() {
+     console.log('Resta --> '+acumulador+'-'+memoria[valor]);
     acumulador = acumulador - memoria[valor];
+     $('#acumulador').val(acumulador);
     dirInstruccion += 1;
 }
 
 //Instruccion 32
 function dividir() {
+     console.log('Divide --> '+acumulador+'/'+memoria[valor]);
     acumulador = memoria[valor] / acumulador;
+     $('#acumulador').val(acumulador);
     dirInstruccion += 1;
 }
 
 //Instruccion 33
 function multiplicar() {
+     console.log('Multiplica --> '+acumulador+'*'+memoria[valor]);
     acumulador = memoria[valor] * acumulador;
+     $('#acumulador').val(acumulador);
     dirInstruccion += 1;
 }
 
@@ -219,10 +279,3 @@ function bifurcarCero() {
 
 
 
-function Dato() {
-    let nameInput = prompt("Dato");
-
-    console.log(nameInput);  
-   return nameInput;  
-};
- 
