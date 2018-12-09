@@ -1,7 +1,7 @@
 body {
   margin: 0px;
   min-height: 100vh;
- background:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/footer_lodyas.png);
+ background:url(../img/footer_lodyas.png);
   display: flex;
   flex-flow: column wrap;
   justify-content: center;

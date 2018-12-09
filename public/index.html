@@ -8,47 +8,49 @@
   <title>CatraComputer</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
-  <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,900' rel='stylesheet' type='text/css'>
+  <link href='./css/fonts/cyrillic.css' rel='stylesheet' type='text/css'>
+  <link href='./css/fonts/latin.css' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
-
   <div class="overlay">
     <h1>CatraComputer</h1>
     <div class="wrapper" style="margin: 0px;">
       <div class="box sidebar" style="padding-top: 0;height: 590px;">
         <h3>CODIGO</h3>
         <div class="editor">
-          <textarea name="" cols="8" id="codigo" class="" style=""></textarea>
+          <textarea name="" cols="8" id="codigo" ></textarea>
 
         </div>
         <br>
-        <input type="button" value="Correr" id="correr" class="form-control button btn-primary" style="float: left;width: 80px;"></input>
-        <button id="limpiar" class="form-control button btn-primary" style="float: right;width: 80px;">Limpiar</button>
-        <button id="paso" class="form-control button btn-primary" style="float: left;width: 130px;">Paso A Paso</button>
+        <input type="button" value="Correr" id="correr" class="form-control button btn btn-success" style="float: left;width: 80px;"></input>
+        <button id="limpiar" class="form-control button btn btn-danger " style="float: right; width: 90px;">Reiniciar </button>
+        <button id="paso" class="form-control button btn btn-warning ml-1" style="float: left;width: 130px;">Paso A Paso</button>
       </div>
 
       <div class="box " style="padding-top: 0;height: 280px;" id="registros">
         <h3 style="margin-bottom: 30px;">REGISTROS</h3>
-              <h4 style="float: right;">ACUMULADOR</h4>
-             <textarea name="" cols="8" id="acumulador" class="texta"></textarea>
-               <h4 style="float: right;">INSTRUCCION</h4>
-             <textarea name="" cols="8" id="instruccion" class="texta"></textarea>
-         
+        <h4 style="float: right;">ACUMULADOR</h4>
+        <textarea name="" cols="8" id="acumulador" class="texta" disabled></textarea>
+        <h4 style="float: right;">INSTRUCCION</h4>
+        <textarea name="" cols="8" id="instruccion" class="texta" disabled></textarea>
+        <h4 style="float: right;">DIRECCIÓN MEM</h4>
+        <textarea name="" cols="8" id="linea" class="texta" disabled></textarea>
+
+
       </div>
-      <div class="box " style="padding-top: 0;height: 280px;" >
+      <div class="box " style="padding-top: 0;height: 280px;">
         <h3>MEMORIA</h3>
-       <textarea name="" cols="8" id="memoria" class="left"></textarea>
+        <textarea name="" cols="8" id="memoria" class="left" disabled></textarea >
          </table>
       </div>
       <div class="box " style="width: 160%; padding-top: 0;top: -48px;position: relative;">
         <h3>CONSOLA</h3>
       
-        <textarea name="" cols="8" id="log" class="left"></textarea>
-        
-</form>
+        <textarea name="" cols="8" id="log" class="left" disabled ></textarea>
+
+        </form>
       </div>
     </div>
 
@@ -56,12 +58,12 @@
 
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-linenumbers.min.js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/controlador.js"></script>
   <script>
     $(function () {
-      $('#codigo').linenumbers({col_width:'25px'});	
+      $('#codigo').linenumbers({ col_width: '25px' });
     });
   </script>
 </body>
