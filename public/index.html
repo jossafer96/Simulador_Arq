@@ -16,44 +16,41 @@
 <body>
   <div class="overlay">
     <h1>CatraComputer</h1>
-    <div class="wrapper" style="margin: 0px;">
-      <div class="box sidebar" style="padding-top: 0;height: 590px;">
+    <div class="row p-2" style="margin: 0px; min-height: 65vh">
+      <div class="box col-7 mr-3" style="padding-top: 0; min-height: 40%;">
         <h3>CODIGO</h3>
         <div class="editor">
-          <textarea name="" cols="8" id="codigo" ></textarea>
-
+          <textarea name="" id="codigo" style="width: 90%"></textarea>
         </div>
         <br>
-        <input type="button" value="Correr" id="correr" class="form-control button btn btn-success" style="float: left;width: 80px;"></input>
+        <input type="button" value="Correr" id="correr" class="form-control button btn btn-success" style="float: left;width: 80px;">
         <button id="limpiar" class="form-control button btn btn-danger " style="float: right; width: 90px;">Reiniciar </button>
         <button id="paso" class="form-control button btn btn-warning ml-1" style="float: left;width: 130px;">Paso A Paso</button>
       </div>
-
-      <div class="box " style="padding-top: 0;height: 280px;" id="registros">
-        <h3 style="margin-bottom: 30px;">REGISTROS</h3>
-        <h4 style="float: right;">ACUMULADOR</h4>
-        <textarea name="" cols="8" id="acumulador" class="texta" disabled></textarea>
-        <h4 style="float: right;">INSTRUCCION</h4>
-        <textarea name="" cols="8" id="instruccion" class="texta" disabled></textarea>
-        <h4 style="float: right;">DIRECCIÓN MEM</h4>
-        <textarea name="" cols="8" id="linea" class="texta" disabled></textarea>
-
-
-      </div>
-      <div class="box " style="padding-top: 0;height: 280px;">
-        <h3>MEMORIA</h3>
-        <textarea name="" cols="8" id="memoria" class="left" disabled></textarea >
-         </table>
-      </div>
-      <div class="box " style="width: 160%; padding-top: 0;top: -48px;position: relative;">
-        <h3>CONSOLA</h3>
-      
-        <textarea name="" cols="8" id="log" class="left" disabled ></textarea>
-
-        </form>
+      <div class="col-5 row" style="min-height: 100%">
+        <div class="col-7 p-0" >
+          <div class="box" style="padding-top: 0; height: 280px;" id="registros">
+            <h3 style="margin-bottom: 30px;">REGISTROS</h3>
+            <h4 style="float: right;">ACUMULADOR</h4>
+            <textarea id="acumulador" class="texta" disabled></textarea>
+            <h4 style="float: right;">INSTRUCCION</h4>
+            <textarea id="instruccion" class="texta" disabled></textarea>
+            <h4 style="float: right;">DIRECCIÓN</h4>
+            <textarea id="linea" class="texta" disabled></textarea>
+          </div>
+        </div>
+        <div class="col-5 pl-3 pr-0" >
+          <div class="box " style="padding-top: 0;height: 280px;">
+            <h3>MEMORIA</h3>
+            <textarea id="memoria" class="left" disabled></textarea>
+          </div>
+        </div>
+        <div class="box col-12 " style="width: 160%; height: 49%; padding-top: 0;top: -48px;position: relative; margin-top: 75px ">
+          <h3>CONSOLA</h3>
+          <textarea name="" cols="8" id="log" class="left" disabled></textarea>
+        </div>
       </div>
     </div>
-
   </div>
 
   <script src="js/jquery.min.js"></script>
@@ -63,7 +60,7 @@
   <script src="js/controlador.js"></script>
   <script>
     $(function () {
-      $('#codigo').linenumbers({ col_width: '25px' });
+      $('#codigo').linenumbers({ col_width: '55px' });
     });
   </script>
 </body>

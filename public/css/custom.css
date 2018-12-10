@@ -31,7 +31,7 @@ body {
       height: 90%!important;
 }
 .texta {
-      width: 120px!important;
+      width: 40%!important;
        float: left!important;
        font-size: 32px;
        height: 60px!important;
@@ -51,7 +51,7 @@ body {
   background-color: #444;
   color: #fff;
   border-radius: 5px;
-  padding: 50px;
+  padding: 35px;
   font-size: 100%;
 }
 
@@ -103,7 +103,7 @@ h3{
   text-align:center;
   color:#FFF !important;
   margin-top:1%;
-  font:30px Lobster;
+  font:1.8rem Lobster;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
@@ -113,7 +113,7 @@ h4{
   text-align:center;
   color:#FFF !important;
   margin-top:1%;
-  font:30px Lobster;
+  font:1.6rem Lobster;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
@@ -218,6 +218,7 @@ body h1, body h2 {
   color: #62a9b9;
 }
 .editor textarea {
+  min-height: 43vh;
   background: #999999;
   flex: 1;
   border: 0;
