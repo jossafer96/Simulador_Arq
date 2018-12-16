@@ -3,11 +3,10 @@
 FERNANDO PADILLA 20141002444
 JOSUE MURILLO 20141005213
 
-2)
-Para correr el proyecto basta con ejecutar el archivo index.html, se encuentra en la carpeta raiz
+2- Para correr el proyecto basta con ejecutar el archivo index.html, se encuentra en la carpeta raiz
 
 
-3)Ejemplos:
+3- Ejemplos:
 1. Usar un ciclo para leer 10 números positivos. Calcular e imprimir la suma.
 20013
 30012
