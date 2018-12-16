@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CatraComputer</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link href='./css/fonts/cyrillic.css' rel='stylesheet' type='text/css'>
+  <link href='./css/fonts/latin.css' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+  <div class="overlay" style="max-height: 100vh">
+    <h1>CatraComputer</h1>
+    <div class="row p-2" style="margin: 0px; min-height: 65vh">
+      <div class="box col-lg-7 col-md-12  mr-3" style="padding-top: 0; min-height: 40%;">
+        <h3>CODIGO</h3>
+        <div class="editor">
+          <textarea name="" id="codigo" style="width: 90%"></textarea>
+        </div>
+        <br>
+        <input type="button" value="Correr" id="correr" class="form-control button btn btn-success" style="float: left;width: 80px;">
+        <button id="limpiar" class="form-control button btn btn-danger " style="float: right; width: 90px;">Reiniciar </button>
+        <button id="paso" class="form-control button btn btn-warning ml-1" style="float: left;width: 130px;">Paso A Paso</button>
+      </div>
+      <div class="col-lg-5 row col-md-12" style="min-height: 100%">
+        <div class="col-lg-7 col-md-6  p-0" >
+          <div class="box pr-3 pl-3" style="padding-top: 0; height: 280px;" id="registros">
+            <h3 style="margin-bottom: 30px;">REGISTROS</h3>
+            <h4 style="float: right;">ACUMULADOR</h4>
+            <textarea id="acumulador" class="texta" disabled></textarea>
+            <h4 style="float: right;">INSTRUCCION</h4>
+            <textarea id="instruccion" class="texta" disabled></textarea>
+            <h4 style="float: right;">DIRECCIÓN</h4>
+            <textarea id="linea" class="texta" disabled></textarea>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6  pl-3 pr-0" >
+          <div class="box " style="padding-top: 0;height: 280px;">
+            <h3>MEMORIA</h3>
+            <textarea id="memoria" class="left" disabled></textarea>
+          </div>
+        </div>
+        <div class="box col-12 " style="width: 160%; height: 49%; padding-top: 0;top: -48px;position: relative; margin-top: 75px ">
+          <h3>CONSOLA</h3>
+          <textarea name="" cols="8" id="log" class="left" disabled></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-linenumbers.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/controlador.js"></script>
+  <script>
+    $(function () {
+      $('#codigo').linenumbers({ col_width: '55px' });
+    });
+  </script>
+</body>
+
+</html>
